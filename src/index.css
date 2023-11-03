@@ -7,4 +7,63 @@
 
 body {
   font-family: sans-serif;
+  background-color: darkgrey;
+  transition: background-color 300ms ease-in-out;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.working {
+  background-color: #41e1ba;
+}
+
+.hidden {
+  display: none;
+}
+
+.promodoro {
+  background: #fff;
+  margin: 50px 20px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+}
+
+.promodoro h2 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.promodoro .timer {
+  font-size: 6rem;
+  text-align: center;
+}
+
+.promodoro .controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.promodoro button {
+  background: gray;
+  border: none;
+  cursor: pointer;
+  padding: 10px 25px;
+  color: black;
+  transition: background-color 300ms ease-in-out;
+  margin: 20px auto;
+}
+
+.working .promodoro button {
+  background: #41e1ba;
+  color: black;
+}
+
+.promodoro .details {
+  margin: 20px 0;
 }
