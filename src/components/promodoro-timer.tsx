@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useInterval } from "../hooks/use-interval";
 import { Button } from "./button";
 import { Timer } from "./timer";
@@ -13,9 +13,25 @@ interface Props {
 export function PromodoroTimer(props: Props): JSX.Element {
 
   const [mainTime, setMainTime] = React.useState(props.promodoroTime);
-  useInterval(() => {
-    setMainTime(mainTime - 1);
-  }, 1000);
+  const [timeCountig, setTimeCountig] = React.useState(false);
+  const [working, setWorking] = React.useState(false);
+
+  useEffect(() => {
+    if(working) document.body.classList.add('working');
+  }, [working]);
+
+
+  useInterval(
+    () => {
+      setMainTime(mainTime - 1);
+    },
+    timeCountig ? 1000 : null,
+  );
+
+  const configureWork = () => {
+    setTimeCountig(true);
+    setWorking(true);
+  };
 
   return (
     <div className="promodoro">
@@ -25,7 +41,7 @@ export function PromodoroTimer(props: Props): JSX.Element {
       <Timer mainTime={mainTime} />
 
       <div className="controls">
-        <Button text="teste" onClick={() => console.log(1)}></Button>
+        <Button text="Work" onClick={() => setTimeCountig(true)}></Button>
       </div>
 
       <div className="details">
