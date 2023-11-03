@@ -7,9 +7,9 @@
 
 body {
   font-family: sans-serif;
-  background-color: darkgrey;
+  background: darkgrey;
   transition: background-color 300ms ease-in-out;
-  line-height: 1.5;
+  line-height: 1.5
 }
 
 .container {
@@ -18,52 +18,52 @@ body {
 }
 
 .working {
-  background-color: #41e1ba;
+  background: #41e1ba;
 }
 
 .hidden {
   display: none;
 }
 
-.promodoro {
+.pomodoro {
   background: #fff;
   margin: 50px 20px;
   padding: 20px;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
-.promodoro h2 {
+.pomodoro h2 {
   font-size: 24px;
   text-align: center;
 }
 
-.promodoro .timer {
+.pomodoro .timer {
   font-size: 6rem;
   text-align: center;
 }
 
-.promodoro .controls {
+.pomodoro .controls {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.promodoro button {
+.pomodoro button {
   background: gray;
   border: none;
   cursor: pointer;
   padding: 10px 25px;
-  color: black;
+  color: #000;
   transition: background-color 300ms ease-in-out;
   margin: 20px auto;
 }
 
-.working .promodoro button {
+.working .pomodoro button {
   background: #41e1ba;
   color: black;
 }
 
-.promodoro .details {
+.pomodoro .details {
   margin: 20px 0;
 }
