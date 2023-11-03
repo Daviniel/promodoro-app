@@ -1,9 +1,11 @@
 import React from 'react';
-import './App.css';
+import { PromodoroTimer } from './components/promodoro-timer';
 
-function App() {
+function App(): JSX.Element {
   return (
-    <h1>Hello World!</h1>
+    <div className='App'>
+      <PromodoroTimer defaultPromodoroTime={1500} />
+    </div>
   );
 }
 
