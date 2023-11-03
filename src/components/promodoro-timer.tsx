@@ -4,11 +4,14 @@ import { Button } from "./button";
 import { Timer } from "./timer";
 
 interface Props {
-  defaultPromodoroTime: number;
+  promodoroTime: number;
+  shortRestTime: number;
+  LongRestTime: number;
+  cycles: number;
 }
 
 export function PromodoroTimer(props: Props): JSX.Element {
-  const [mainTime, setMainTime] = React.useState(props.defaultPromodoroTime);
+  const [mainTime, setMainTime] = React.useState(props.promodoroTime);
   useInterval(() => {
     setMainTime(mainTime - 1);
   }, 1000);
