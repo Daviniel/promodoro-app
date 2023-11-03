@@ -13,7 +13,7 @@ interface Props {
 export function PromodoroTimer(props: Props): JSX.Element {
 
   const [mainTime, setMainTime] = React.useState(props.promodoroTime);
-  const [timeCountig, setTimeCountig] = React.useState(false);
+  const [timeCounting, setTimeCounting] = React.useState(false);
   const [working, setWorking] = React.useState(false);
 
   useEffect(() => {
@@ -25,11 +25,11 @@ export function PromodoroTimer(props: Props): JSX.Element {
     () => {
       setMainTime(mainTime - 1);
     },
-    timeCountig ? 1000 : null,
+    timeCounting ? 1000 : null,
   );
 
   const configureWork = () => {
-    setTimeCountig(true);
+    setTimeCounting(true);
     setWorking(true);
   };
 
@@ -41,7 +41,11 @@ export function PromodoroTimer(props: Props): JSX.Element {
       <Timer mainTime={mainTime} />
 
       <div className="controls">
-        <Button text="Work" onClick={() => setTimeCountig(true)}></Button>
+        <Button text="Work" onClick={() => setTimeCounting(true)}></Button>
+        <Button
+          text={timeCounting ? 'Pause' : 'Play'}
+          onClick={() => setTimeCounting(!timeCounting)}
+        ></Button>
       </div>
 
       <div className="details">
